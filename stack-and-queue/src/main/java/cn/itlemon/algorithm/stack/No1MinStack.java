@@ -11,6 +11,8 @@ import java.util.Stack;
  * 2.设计的栈类型可以使用现成的栈结构
  * 【难度】
  * ※
+ * 【测试】
+ * {@link cn.itlemon.algorithm.stack.No1MinStackTest}
  *
  * @author jiangpingping
  * @date 2020/5/13 19:41
