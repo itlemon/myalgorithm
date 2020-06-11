@@ -8,13 +8,13 @@ package cn.itlemon.algorithm.model.animals;
  */
 public abstract class AbstractPet {
 
-    private final String type;
+    private final PetType type;
 
-    public AbstractPet(String type) {
+    public AbstractPet(PetType type) {
         this.type = type;
     }
 
-    public String getType() {
+    public PetType getType() {
         return type;
     }
 }

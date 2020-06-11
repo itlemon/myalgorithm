@@ -9,7 +9,7 @@ package cn.itlemon.algorithm.model.animals;
 public class Cat extends AbstractPet {
 
     public Cat() {
-        super("cat");
+        super(PetType.cat);
     }
 
 }
