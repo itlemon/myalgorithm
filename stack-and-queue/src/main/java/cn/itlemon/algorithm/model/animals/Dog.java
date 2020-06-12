@@ -12,4 +12,8 @@ public class Dog extends AbstractPet {
         super(PetType.dog);
     }
 
+    @Override
+    public String toString() {
+        return "PetType:" + getType();
+    }
 }

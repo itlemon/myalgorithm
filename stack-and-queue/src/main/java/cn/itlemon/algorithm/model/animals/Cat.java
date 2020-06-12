@@ -12,4 +12,8 @@ public class Cat extends AbstractPet {
         super(PetType.cat);
     }
 
+    @Override
+    public String toString() {
+        return "PetType:" + getType();
+    }
 }

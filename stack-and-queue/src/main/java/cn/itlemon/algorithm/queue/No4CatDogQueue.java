@@ -1,6 +1,8 @@
 package cn.itlemon.algorithm.queue;
 
 import cn.itlemon.algorithm.model.animals.AbstractPet;
+import cn.itlemon.algorithm.model.animals.Cat;
+import cn.itlemon.algorithm.model.animals.Dog;
 import cn.itlemon.algorithm.model.animals.PetType;
 
 import java.util.Queue;
@@ -51,7 +53,7 @@ public class No4CatDogQueue {
         }
     }
 
-    class CatDogQueue {
+    static class CatDogQueue {
 
         private final Queue<PetEnterQueue> dogQueue;
         private final Queue<PetEnterQueue> catQueue;
@@ -78,6 +80,11 @@ public class No4CatDogQueue {
             }
         }
 
+        /**
+         * 猫狗依次出队
+         *
+         * @return 猫或狗
+         */
         public AbstractPet pollAll() {
             if (!isCatEmpty() && !isDogEmpty()) {
                 assert dogQueue.peek() != null;
@@ -87,8 +94,39 @@ public class No4CatDogQueue {
                 } else {
                     return catQueue.poll().getPet();
                 }
+            } else if (!isCatEmpty()) {
+                return catQueue.poll().getPet();
+            } else if (!isDogEmpty()) {
+                return dogQueue.poll().getPet();
+            } else {
+                throw new RuntimeException("Error, queue is empty!");
             }
-            return null;
+        }
+
+        /**
+         * 猫出队
+         *
+         * @return 猫
+         */
+        public Cat pollCat() {
+            if (!isCatEmpty()) {
+                return (Cat) catQueue.poll().getPet();
+            } else {
+                throw new RuntimeException("Error, cat queue is empty!");
+            }
+        }
+
+        /**
+         * 狗出队
+         *
+         * @return 狗
+         */
+        public Dog pollDog() {
+            if (!isDogEmpty()) {
+                return (Dog) dogQueue.poll().getPet();
+            } else {
+                throw new RuntimeException("Error, dog queue is empty!");
+            }
         }
 
         /**
@@ -117,7 +155,6 @@ public class No4CatDogQueue {
         public boolean isDogEmpty() {
             return dogQueue.isEmpty();
         }
-
 
     }
 
