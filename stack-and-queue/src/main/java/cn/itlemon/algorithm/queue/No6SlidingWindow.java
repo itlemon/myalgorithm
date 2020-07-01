@@ -43,7 +43,7 @@ public class No6SlidingWindow {
 
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums == null || k < 1 || nums.length < k) {
-            return null;
+            return new int[0];
         }
         int[] result = new int[nums.length - k + 1];
         LinkedList<Integer> queue = new LinkedList<>();
