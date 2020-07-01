@@ -8,5 +8,8 @@ package cn.itlemon.algorithm.stack;
  */
 public class No7MonotoneStack {
 
+    public static void main(String[] args) {
+
+    }
 
 }
